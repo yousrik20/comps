@@ -1,0 +1,32 @@
+
+<p>germanboy works!</p>
+<form class="ui form">
+    <div class="field">
+      <label>First Name</label>
+      <input type="text" name="first-name" placeholder="First Name">
+    </div>
+    <div class="field">
+      <label>Last Name</label>
+      <input type="text" name="last-name" placeholder="Last Name">
+    </div>
+    <div class="field">
+      <div class="ui checkbox">
+        <input type="checkbox" tabindex="0" class="hidden">
+        <label>I agree to the Terms and Conditions</label>
+      </div>
+    </div>
+    <button class="ui button" type="submit">Submit</button>
+    <button  class="button" [ngClass]="!show ? 'yeshave' :'nohave'" type="button"  (click)="show=!show">{{!show ? 'show' : 'hide'}}</button>
+    <p *ngIf="show">{{name}}</p>
+  </form>
+  <div *ngFor="let image of images;let i=index">
+      <li >
+          <a (click)="currentPage=i">{{i+1}}</a>
+      </li>
+  </div>
+  <div class="ui card">
+        <p class="ui header">{{images[currentPage].title}}</p>
+        <img class="image" [src]="images[currentPage].url">
+  </div>
+  <app-deutsch [name]="name"></app-deutsch>
+  <app-deutsch [name]="name"></app-deutsch>
